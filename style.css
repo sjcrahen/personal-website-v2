@@ -34,7 +34,7 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 7;
+    z-index: 1;
 }
 
 .main-nav a {
@@ -189,6 +189,58 @@ p {
 
 .bi-file-earmark-arrow-down {
     margin-left: .5rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    /* height: 55vh; */
+    margin: 10vh auto;
+}
+
+.modal-content {
+    background-color: var(--color-bright);
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#download-icon-span {
+    padding-top: .3rem;
+    padding-right: .5rem;
+    cursor: pointer;
+}
+
+.bi-download {
+    width: 1rem;
+    height: 1rem;
+    font-size: 1.5rem;
+    color: var(--color-bg);
+}
+
+.bi-download:hover {
+    color: var(--color-contrast);
+}
+
+.bi-download:active {
+    color: var(--color-main);
+}
+
+.close {
+    color: var(--color-bg);
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0 1.5rem;
+    cursor: pointer;
+}
+
+#resume-frame {
+    width: 100%;
+    height: 83vh; 
 }
 
 .card {

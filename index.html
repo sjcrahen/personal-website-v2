@@ -53,10 +53,23 @@
     <p class="color-main"><strong>Ending one journey, beginning another...</strong></p>
     <p class="color-main">I spent 20 years developing mastery in leadership, management, mentoring, and Coast Guard operations, while simultaneously raising a family and pursuing a life of learning. Poised for rapid growth as I transition to a new career, I am ready to take on new challenges and apply my experience to continued pursuit of excellence.</p>
     <p class="color-main">I am eager to apply my analytical, technical, and programming skills to build scalable software systems that add business value.</p>
-    <a download href="Shawn_Crahen_Resume_2022.docx"><p class="resume mono">resume<i class="bi bi-file-earmark-arrow-down"></i></p></a>
+    <!-- <a download href="Shawn_Crahen_Resume_2022.docx"><p class="resume mono">resume<i class="bi bi-file-earmark-arrow-down"></i></p></a> -->
+    <a id="resume-modal-link" href="javascript:void(0)"><p class="resume mono">resume<i class="bi bi-file-earmark-arrow-down"></i></p></a>
   </div>
   </div>
 </div>
+</div>
+
+<!------------ Resume Modal ------------>
+
+<div id="resume-modal" class="modal">
+  <div class="flex-container modal-content">
+    <span id="download-icon-span">
+      <a download href="Shawn_Crahen_Resume_2022.pdf" target="_blank">
+        <i class="bi bi-download"></i></span></a>
+    <span class="close">&times;</span>
+    <object id="resume-frame" data="Shawn_Crahen_Resume_2022.pdf#view=FitH" type="application/pdf" width="100%" height="100%"></object>
+  </div>
 </div>
 
 <!------------ Projects ------------>
@@ -183,6 +196,24 @@
 </div>
 </div>
 <script>
+
+  // open and close resume modal
+  var modal = document.getElementById("resume-modal");
+  var aOpenModal = document.getElementById("resume-modal-link");
+  var closeButton = document.getElementsByClassName("close")[0];
+  aOpenModal.onclick = function() {
+    modal.style.display = "block";
+  }
+  closeButton.onclick = function() {
+    modal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // toggle menu for small screens
   function showHideMenu() {
     var nav = document.getElementById("nav");
     if (nav.className === "main-nav") {
