@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <title>ShawnCrahen | SoftwareEngineer</title>  
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.svg">
+</head>
+
+<body>
+
+<!------------ Nav ------------>
+
+<nav id="nav" class="main-nav">
+  <div class="main-nav-flex-container">
+  <a href="#contact" onclick="showHideMenu()">Contact</a>
+  <a href="#skills" onclick="showHideMenu()">Skills</a>
+  <a href="#education" onclick="showHideMenu()">Education</a>
+  <a href="#projects" onclick="showHideMenu()">Projects</a>
+  <a href="#about" onclick="showHideMenu()">About</a>
+  <a href="javascript:void(0)" class="menu-icon" onclick="showHideMenu()"><i class="bi bi-list"></i></a>
+  </div>
+</nav>
+
+<!------------ Header ------------>
+
+<div id="header" class="container">
+  <p class="small color-contrast mono">Hello, my name is<p>
+  <h1 class="header-name color-bright sans">Shawn Crahen.</h1>
+  <h2 class="header-pitch color-main sans">I'm an aspiring Software Engineer.<h2>
+  <p class="header-p color-main sans">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea unde iste maxime, itaque ratione cum ut earum blanditiis porro natus nemo sapiente dicta. Voluptas dolorem eum exercitationem architecto voluptate repellendus!</p>
+  <div class="header-icons">
+    <a href="https://www.linkedin.com/in/shawnjcrahen" target="_blank"><i class="bi bi-linkedin color-contrast"></i></a>
+    <a href="https://github.com/sjcrahen" target="_blank"><i class="bi bi-github color-contrast"></i></a>
+  </div>
+</div>
+
+<!------------ About Me ------------>
+
+<div id="about" class="container">
+<div class="flex-container gap">
+<div class="section-header">
+  <h2 class="section-title color-bright sans">About me<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+</div>
+  <div class="flex-container gap">
+  <div class="flex-item">
+    <p><img src="head-shot.jpg" class="about-flex-img" alt="47ft MLB in Surf"></p>
+  </div>
+  <div class="about-flex-p">
+    <p class="color-main"><strong>Ending one journey, beginning another...</strong></p>
+    <p class="color-main">I spent 20 years developing mastery in leadership, management, mentoring, and Coast Guard operations, while simultaneously raising a family and pursuing a life of learning. Poised for rapid growth as I transition to a new career, I am ready to take on new challenges and apply my experience to continued pursuit of excellence.</p>
+    <p class="color-main">I am eager to apply my analytical, technical, and programming skills to build scalable software systems that add business value.</p>
+    <a download href="Shawn_Crahen_Resume_2022.docx"><p class="resume mono">resume<i class="bi bi-file-earmark-arrow-down"></i></p></a>
+  </div>
+  </div>
+</div>
+</div>
+
+<!------------ Projects ------------>
+
+<div id="projects" class="container">
+<div class="flex-container gap">
+<div class="section-header">
+  <h2 class="section-title color-bright sans">Software Projects<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+</div>
+  <div class="flex-container card-block gap">
+    <a href="">
+    <div class="flex-item card">
+    <div class="card-img-box">
+    <img class="card-img" src="spring-logo.png" alt="New app coming soon...">
+    </div>
+    <div class="card-desc sans">
+      <h3 class="card-h3">Spring Framework App</h3>
+      <p class="card-p">Coming soon...</p>
+      <div class="card-skills flex-container skills-flex-container color-main">
+      </div>
+    </div>
+    </div></a>
+    
+    <a href="https://github.com/Space-Rhino/bootsrx-bignumber-calculator/releases/tag/v1.0.0" target="_blank" class="">
+    <div class="flex-item card">
+    <div class="card-img-box">
+    <img class="card-img" src="Calculator.ico" alt="Image of Calculator">
+    </div>
+    <div class="card-desc sans">
+      <h3 class="card-h3">BigCalculator</h3>
+      <p class="card-p">Led a three-member, remote team to develop a Windows calculator application capable of calculations with up to 100-digit precision</p>
+      <div class="card-skills flex-container skills-flex-container color-main">
+        <p class="flex-skill">Java</p>
+        <p class="flex-skill">JUnit</p>               
+        <p class="flex-skill">Git</p>               
+      </div>
+    </div>
+    </div></a>
+
+    <a href="https://github.com/sjcrahen/minesweeper" target="_blank" class="">
+    <div class="flex-item card">
+    <div class="card-img-box">
+    <img class="card-img" src="minesweeper.jpg" alt="Image of Minesweeper">
+    </div>
+    <div class="card-desc sans">
+      <h3 class="card-h3">Minesweeper</h3>
+      <p class="card-p">Created a clone of the classic Minesweeper using Java/JavaFX</p>
+      <div class="card-skills flex-container skills-flex-container color-main">
+        <p class="flex-skill">JavaFX</p>
+        <p class="flex-skill">Git</p>               
+      </div>
+    </div>
+    </div></a>
+  </div>
+</div>
+</div>
+
+<!------------ Education ------------>
+
+<div id="education" class="container">
+<div class="flex-container gap">
+<div class="section-header">
+  <h2 class="section-title color-bright sans">Education<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+</div>
+  <div class="flex-container ed-flex-item-container gap">
+    <div class="flex-item ed-flex-item color-main sans">
+      <small>2021</small>
+      <h4 class ="color-bright">M.S. Computer Science</h4>
+      <img class="uis-logo" src="uis-logo.png"><p>University of Illinois - Springfield</p>
+    </div>
+
+    <div class="flex-item ed-flex-item color-main sans">
+      <small>2018</small>
+      <h4 class="color-bright">B.S. Environmental Science</h4>
+      <img class="amu-logo" src="amu-logo.png"><p>American Military University</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!------------ Languages and Technologies ------------>
+
+<div id="skills" class="container">
+<div class="flex-container gap">
+<div class="section-header">
+  <h2 class="section-title color-bright sans">Languages & Technologies<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+</div>
+  <div class="flex-container skills-flex-item-container gap color-main sans">
+    <p class="flex-skill">Java</p>
+    <p class="flex-skill">Python</p>               
+    <p class="flex-skill">Amazon Web Services</p>               
+    <p class="flex-skill">SQL</p>
+    <p class="flex-skill">C</p>
+    <p class="flex-skill">Git</p>
+    <p class="flex-skill">JavaScript</p>
+    <p class="flex-skill">HTML</p>
+    <p class="flex-skill">CSS</p>
+    <p class="flex-skill">Spring Framework</p>
+    <p class="flex-skill">Hibernate</p>
+    <p class="flex-skill">NoSQL</p>
+    <p class="flex-skill">GitHub</p>
+  </div>
+</div>
+</div>
+
+<!------------ Contact Me ------------>
+
+<div id="contact" class="container">
+<div class="flex-container gap">
+<div class="section-header">
+  <h2 class="section-title color-bright sans">Contact<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+</div>
+  <div class="flex-container contact-form-flex-container">
+  <form method="POST" action="" class="contact-form">
+    <input type="text" class="form-name" name="name" placeholder="Name" autocomplete="off" required>
+    <input type="email" class="" name="email" placeholder="Email" autocomplete="off" required>
+    <input type="text" class="" name="subject" placeholder="Subject" autocomplete="off" required>
+    <textarea class="" rows="5" name="body" placeholder="Enter your message" autocomplete="off" required></textarea>
+    <input type="submit" class="btn" value="Send Me A Message">
+		<input type="reset" class="btn" value="Clear Form">
+  </form>
+  </div>
+</div>
+</div>
+<script>
+  function showHideMenu() {
+    var nav = document.getElementById("nav");
+    if (nav.className === "main-nav") {
+      nav.className += " responsive";
+    } else {
+      nav.className = "main-nav";
+    }
+  }
+</script>
+</body>
+</html>
