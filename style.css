@@ -27,6 +27,7 @@ p {
 .main-nav-flex-container {
     display: flex;
     flex-flow: row-reverse;
+    background-color: rgba(2,12,27,.8);
 }
 
 .main-nav {
@@ -379,7 +380,10 @@ p {
 @media screen and (max-width: 600px) {
     .gap {gap: 1rem;}
     p {font-size: 1rem;}
-    .main-nav a {display: none;}
+    .main-nav-flex-container {background-color: rgba(2,12,27,.8);}
+    .main-nav a {
+        display: none;
+    }
     .main-nav a.menu-icon {
         display: block;
     }
@@ -389,11 +393,10 @@ p {
         top: 0;
     }
     .main-nav.responsive {
-        width: 120px;
+        width: 130px;
         position: fixed;
         right: 0px;
         top: 0px;
-        overflow: auto;
     }
     .main-nav.responsive .main-nav-flex-container {
         flex-flow: column-reverse;
@@ -405,7 +408,6 @@ p {
         display: block;
         direction: rtl;
         text-align: right;
-        background-color: rgba(2,12,27,.4);
     }
     .main-nav.responsive a.menu-icon {
         padding: 1.5rem 2.5rem 0 0;
