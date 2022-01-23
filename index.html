@@ -52,7 +52,7 @@
 <div id="about" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">About me<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">About me<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container gap">
   <div class="flex-item">
@@ -83,7 +83,7 @@
 <div id="projects" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Software Projects<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Software Projects<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container card-block gap">
     <a href="">
@@ -138,7 +138,7 @@
 <div id="education" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Education<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Education<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container ed-flex-item-container gap">
     <div class="flex-item ed-flex-item color-main sans">
@@ -161,7 +161,7 @@
 <div id="skills" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Languages & Technologies<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Languages & Technologies<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container skills-flex-item-container gap color-main sans">
     <p class="flex-skill">Java</p>
@@ -187,7 +187,7 @@
 <div id="contact" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Contact<a href="#header"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Contact<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
 <div class="flex-container contact-form-flex-container">
   <form method="POST" action="" class="contact-form">
@@ -283,9 +283,15 @@
     if (nav.className === "main-nav") {
       nav.className += " responsive";
     } else {
-      nav.className = "main-nav";
+      collapseMenu();
     }
   }
+
+  function collapseMenu() {
+    var nav = document.getElementById("nav");
+    nav.className = "main-nav";
+  }
+
 </script>
 </body>
 </html>

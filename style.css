@@ -465,7 +465,7 @@ p {
 
 #contact-modal .btn:hover {
     cursor: pointer;
-    background-color: var(--color-contrast);
+    background-color: var(--color-main);
 }
 #contact .btn:active, #contact-modal .btn:active {
     transform: translate(1px, 2px);
