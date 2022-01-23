@@ -145,11 +145,19 @@ p {
     border-bottom: 1px solid var(--color-contrast);
 }
 
+#contact-modal .section-header {
+    border-bottom: 2px solid var(--color-contrast);
+}
+
 .section-title {
     font-size: 3rem;
     font-weight: 100;
     font-family: var(--font-sans);
     color: var(--color-bright);
+}
+
+#contact-modal .section-title {
+    color: var(--color-bg)
 }
 
 .flex-item {
@@ -199,19 +207,46 @@ p {
     left: 50%;
     transform: translateX(-50%);
     width: 75%;
-    /* height: 55vh; */
     margin: 10vh auto;
 }
 
 .modal-content {
+    border: 1px solid var(--color-bright);
+    border-radius: .3rem;
     background-color: var(--color-bright);
     flex-direction: row;
     justify-content: flex-end;
 }
 
-#download-icon-span {
-    padding-top: .3rem;
-    padding-right: .5rem;
+#contact-modal.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    border: 2px solid var(--color-bg);
+    background-color: var(--color-bright);
+    border-radius: .3rem;
+}
+
+#contact-modal .modal-content {
+    width: 80%;
+    margin: 5vh auto;
+    background-color: var(--color-bright);
+    border: none;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.contact-modal-container {
+    max-height: 89vh;
+    overflow: auto;
+}
+
+#download-icon {
+    padding: .3rem 1.5rem 0;
     cursor: pointer;
 }
 
@@ -222,20 +257,27 @@ p {
     color: var(--color-bg);
 }
 
-.bi-download:hover {
-    color: var(--color-contrast);
-}
-
-.bi-download:active {
-    color: var(--color-main);
+#download-icon:hover {
+    background-color: #bbb;
 }
 
 .close {
+    border-top-right-radius: .3rem;
     color: var(--color-bg);
     font-size: 2rem;
     font-weight: bold;
     padding: 0 1.5rem;
     cursor: pointer;
+}
+
+.close:hover {
+    background-color: red;
+    color: var(--color-bright);
+}
+
+.close-contact-modal {
+    color: var(--color-bg);
+    float: right;
 }
 
 #resume-frame {
@@ -370,8 +412,27 @@ p {
     resize: none;
 }
 
+#contact-modal input, #contact-modal textarea {
+    box-sizing: border-box;
+    background-color: var(--color-bright);
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: .8rem;
+    border-radius: .3rem;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--color-bg);
+    border: 2px solid var(--color-bg);
+    resize: none;
+    transition: transform .2s;
+}
+
 #contact input:hover, #contact textarea:hover {
     border: 2px solid var(--color-contrast);
+}
+
+#contact-modal input:hover, #contact-modal textarea:hover {
+    transform: scale(1.01);
 }
 
 #contact input:focus, #contact textarea:focus {
@@ -387,6 +448,14 @@ p {
     margin-right: 1rem;
 }
 
+#contact-modal .btn {
+    width: auto;
+    text-align: center;
+    border: 2px solid var(--color-bg);
+    font-family: var(--font-mono);
+    margin-right: 1rem;
+}
+
 #contact .btn:hover {
     cursor: pointer;
     border: 2px solid var(--color-contrast);
@@ -394,7 +463,11 @@ p {
     color: var(--color-bg);
 }
 
-#contact .btn:active {
+#contact-modal .btn:hover {
+    cursor: pointer;
+    background-color: var(--color-contrast);
+}
+#contact .btn:active, #contact-modal .btn:active {
     transform: translate(1px, 2px);
 }
 
@@ -403,6 +476,10 @@ p {
     font-size: 1.2rem;
     color: var(--color-bright);
 }
+#contact-modal ::placeholder {
+    color: var(--color-main);
+}
+
 @media screen and (min-width: 601px) {
     .gap {gap: 1.5rem;}
     .main-nav a {font-size: 1rem;}
@@ -423,7 +500,7 @@ p {
     .header-name, .header-pitch {font-size: 4rem;}
     .header-p {font-size: 1.2rem; margin-top: 2rem;}
     .bi-linkedin, .bi-github {font-size: 2.5rem; margin: 2rem;}
-    #contact input, #contact textarea {margin-bottom: 1rem;}
+    #contact {display: none;}
 }
 @media screen and (min-width: 992px) {
     .section-title {font-size: 3rem;}
