@@ -8,7 +8,7 @@
   <title>ShawnCrahen | SoftwareEngineer</title>  
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.svg">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0J2K4SF2F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,12 +25,12 @@
 
 <nav id="nav" class="main-nav">
   <div class="main-nav-flex-container">
-  <a href="javascript:void(0)" onclick="showContact(); showHideMenu();">Contact</a>
-  <a href="#skills" onclick="showHideMenu();">Skills</a>
-  <a href="#education" onclick="showHideMenu();">Education</a>
-  <a href="#projects" onclick="showHideMenu();">Projects</a>
-  <a href="#about" onclick="showHideMenu();">About</a>
-  <a href="javascript:void(0)" class="menu-icon" onclick="showHideMenu();"><i class="bi bi-list"></i></a>
+  <a href="javascript:void(0)" onclick="showContact(); showHideMenu(); resetFormSendButton();">Contact</a>
+  <a href="#skills" onclick="showHideMenu(); resetFormSendButton();">Skills</a>
+  <a href="#education" onclick="showHideMenu(); resetFormSendButton();">Education</a>
+  <a href="#projects" onclick="showHideMenu(); resetFormSendButton();">Projects</a>
+  <a href="#about" onclick="showHideMenu(); resetFormSendButton();">About</a>
+  <a href="javascript:void(0)" class="menu-icon" onclick="showHideMenu(); resetFormSendButton();"><i class="bi bi-list"></i></a>
   </div>
 </nav>
 
@@ -52,7 +52,7 @@
 <div id="about" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">About me<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">About me<a href="#header" onclick="collapseMenu(); resetFormSendButton();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container gap">
   <div class="flex-item">
@@ -83,7 +83,7 @@
 <div id="projects" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Software Projects<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Software Projects<a href="#header" onclick="collapseMenu(); resetFormSendButton();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container card-block gap">
     <a href="">
@@ -138,7 +138,7 @@
 <div id="education" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Education<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Education<a href="#header" onclick="collapseMenu(); resetFormSendButton();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container ed-flex-item-container gap">
     <div class="flex-item ed-flex-item color-main sans">
@@ -161,7 +161,7 @@
 <div id="skills" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Languages & Technologies<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Languages & Technologies<a href="#header" onclick="collapseMenu(); resetFormSendButton();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container skills-flex-item-container gap color-main sans">
     <p class="flex-skill">Java</p>
@@ -187,16 +187,16 @@
 <div id="contact" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Contact<a href="#header" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Contact<a href="#header" onclick="collapseMenu(); resetFormSendButton();"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
 <div class="flex-container contact-form-flex-container">
-  <form method="POST" action="" class="contact-form">
-    <input type="text" class="form-name" name="name" placeholder="Name" autocomplete="off" required>
-    <input type="email" class="" name="email" placeholder="Email" autocomplete="off" required>
-    <input type="text" class="" name="subject" placeholder="Subject" autocomplete="off" required>
-    <textarea class="" rows="5" name="body" placeholder="Enter your message" autocomplete="off" required></textarea>
-    <input type="submit" class="btn" value="Send Me A Message">
-		<input type="reset" class="btn" value="Clear Form">
+  <form id="form">
+    <input type="text" name="name" placeholder="Name" autocomplete="off" required>
+    <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+    <input type="text" name="subject" placeholder="Subject" autocomplete="off" required>
+    <textarea rows="5" name="message" placeholder="Enter your message" autocomplete="off" required></textarea>
+    <input type="submit" id="submit" class="submit-button btn" value="Send">
+		<input type="reset" class="btn" onclick="resetFormSendButton();" value="Clear Form">
   </form>
 </div>
 </div>
@@ -212,13 +212,13 @@
       <h2 class="section-title color-bright sans">Contact<a href="#header"></a></h2>
     </div>
     <div class="flex-container contact-form-flex-container">
-      <form method="POST" action="">
-        <input type="text" class="form-name" name="name" placeholder="Name" autocomplete="off" required>
-        <input type="email" class="" name="email" placeholder="Email" autocomplete="off" required>
-        <input type="text" class="" name="subject" placeholder="Subject" autocomplete="off" required>
-        <textarea class="" rows="5" name="body" placeholder="Enter your message" autocomplete="off" required></textarea>
-        <input type="submit" class="btn" value="Send Me A Message">
-        <input type="reset" class="btn" value="Clear Form">
+      <form id="modal-form">
+        <input type="text" name="name" placeholder="Name" autocomplete="off" required>
+        <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+        <input type="text" name="subject" placeholder="Subject" autocomplete="off" required>
+        <textarea rows="5" name="message" placeholder="Enter your message" autocomplete="off" required></textarea>
+        <input type="submit" id="modal-submit" class="submit-button btn" value="Send">
+        <input type="reset" class="btn" onclick="resetFormSendButton();" value="Clear Form">
       </form>
     </div>
     </div>
@@ -228,6 +228,70 @@
 <!------------ Scripts ------------>
 
 <script>
+
+  // sendEmail listeners
+  const modalForm = document.querySelector("#modal-form");
+  modalForm.addEventListener("submit", event => sendEmail(event));
+
+  const form = document.querySelector("#form");
+  form.addEventListener("submit", event => sendEmail(event));
+
+  // send email to aws api gateway -> aws lambda -> aws ses
+  function sendEmail(event) {
+    event.preventDefault();
+
+    const {name, email, subject, message} = event.target;
+    const endpoint = "https://53wpstdce3.execute-api.us-east-1.amazonaws.com/default/sendEmail"
+
+    const body = JSON.stringify({
+      senderName: name.value,
+      senderEmail: email.value,
+      subject: subject.value,
+      message: message.value
+    });
+
+    const requestOptions = {
+      method: "POST",
+      body
+    };
+
+    fetch(endpoint, requestOptions)
+      .then((response) => {
+        if (!response.ok) throw new Error("Error in fetch");
+        return response.json();
+      })
+      .then((response) => {
+        if (event.target.id === "modal-form") {
+          var button = document.querySelector("#modal-submit");
+        } else {
+          var button = document.querySelector("#submit");
+        }
+        button.value = "Thank you!";
+        button.style.color = "#89d2ff";
+      })
+      .catch((error) => {
+        if (event.target.id === "modal-form") {
+          var button = document.querySelector("#modal-submit");
+        } else {
+          var button = document.querySelector("#submit");
+        }
+        button.value = "ERROR!";
+        button.style.color = "red";
+      });
+  }
+
+  function resetFormSendButton() {
+    var modalButton = document.querySelector("#modal-submit");
+    modalButton.value = "Send";
+    modalButton.style.color = "#020c1b";
+
+    var button = document.querySelector("#submit");
+    button.value = "Send";
+    button.style.color = "#e8e8e8";
+
+    document.getElementById("modal-form").reset();
+    document.getElementById("form").reset();
+  }
   
   // open and close resume modal
   function getResume() {
@@ -247,6 +311,7 @@
       // allow closing the modal
       closeButton.onclick = () => {
         resumeModal.style.display = "none";
+        resetFormSendButton();
       }
     } else { // small viewports
       openResume(); 
@@ -291,6 +356,7 @@
     var nav = document.getElementById("nav");
     nav.className = "main-nav";
   }
+
 
 </script>
 </body>
