@@ -14,7 +14,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-V0J2K4SF2F');
   </script>
 </head>
@@ -40,7 +39,7 @@
   <p class="small color-contrast mono">Hello, my name is<p>
   <h1 class="header-name color-bright sans">Shawn Crahen.</h1>
   <h2 class="header-pitch color-main sans">I'm an aspiring Software Engineer.<h2>
-  <p class="header-p color-main sans">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea unde iste maxime, itaque ratione cum ut earum blanditiis porro natus nemo sapiente dicta. Voluptas dolorem eum exercitationem architecto voluptate repellendus!</p>
+  <p class="header-p color-main sans">A recent graduate, M.S. in Computer Science, skilled in core computer science topics, the Java ecosystem, core web development languages, and cloud computing -- I am eager to apply my analytical, technical, and programming skills to build scalable software systems that add business value.</p>
   <div class="header-icons">
     <a href="https://www.linkedin.com/in/shawnjcrahen" target="_blank"><i class="bi bi-linkedin color-contrast"></i></a>
     <a href="https://github.com/sjcrahen" target="_blank"><i class="bi bi-github color-contrast"></i></a>
@@ -61,7 +60,6 @@
   <div class="about-flex-p">
     <p class="color-main"><strong>Ending one journey, beginning another...</strong></p>
     <p class="color-main">I spent 20 years developing mastery in leadership, management, mentoring, and Coast Guard operations, while simultaneously raising a family and pursuing a life of learning. Poised for rapid growth as I transition to a new career, I am ready to take on new challenges and apply my experience to continued pursuit of excellence.</p>
-    <p class="color-main">I am eager to apply my analytical, technical, and programming skills to build scalable software systems that add business value.</p>
     <a href="javascript:void(0)" onclick="getResume();"><p class="resume mono">resume<i class="bi bi-file-earmark-arrow-down"></i></p></a>
   </div>
   </div>
@@ -268,6 +266,7 @@
         }
         button.value = "Thank you!";
         button.style.color = "#89d2ff";
+        button.disabled = true;
       })
       .catch((error) => {
         if (event.target.id === "modal-form") {
@@ -277,17 +276,21 @@
         }
         button.value = "ERROR!";
         button.style.color = "red";
+        button.disabled = true;
       });
   }
 
+  // reset form buttons
   function resetFormSendButton() {
     var modalButton = document.querySelector("#modal-submit");
     modalButton.value = "Send";
-    modalButton.style.color = "#020c1b";
+    modalButton.style.color = "";
+    modalButton.disabled = false;
 
     var button = document.querySelector("#submit");
     button.value = "Send";
-    button.style.color = "#e8e8e8";
+    button.style.color = "";
+    button.disabled = false;
 
     document.getElementById("modal-form").reset();
     document.getElementById("form").reset();
