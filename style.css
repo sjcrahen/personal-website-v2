@@ -16,6 +16,16 @@ body {background-color:var(--color-bg);}
 .color-bright {color:var(--color-bright);}
 .color-contrast {color:var(--color-contrast);}
 .gap {gap: 2rem;}
+#backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(2,12,27,.7);
+    display: none; 
+}
 p {
     font-size: 1.2rem;
     font-family: var(--font-sans);
@@ -145,12 +155,12 @@ p {
 .modal {
     display: none;
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 75%;
-    margin: 10vh auto;
+    margin: 7vh auto;
 }
 .modal-content {
     border: 1px solid var(--color-bright);
@@ -162,7 +172,7 @@ p {
 #contact-modal.modal {
     display: none;
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     top: 0;
     left: 50%;
     transform: translateX(-50%);

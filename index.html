@@ -19,6 +19,7 @@
 </head>
 
 <body>
+<div id="backdrop"></div>
 
 <!------------ Nav ------------>
 
@@ -299,14 +300,17 @@
   // open and close resume modal
   function getResume() {
     var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth ||0);
-    var resumeModal = document.getElementById("resume-modal");
-    var downloadIcon = document.getElementById("download-icon");
-    var closeButton = document.getElementsByClassName("close")[0];
 
     // for larger viewports show modal
     if (vw >= 600) {
+      var resumeModal = document.getElementById("resume-modal");
+      var backdrop = document.getElementById("backdrop");
+      var downloadIcon = document.getElementById("download-icon");
+      var closeButton = document.getElementsByClassName("close")[0];
+
       //show modal
       resumeModal.style.display = "block";
+      backdrop.style.display = "block";
 
       // download the resume
       downloadIcon.onclick = () => openResume();
@@ -314,6 +318,7 @@
       // allow closing the modal
       closeButton.onclick = () => {
         resumeModal.style.display = "none";
+        backdrop.style.display = "none";
         resetFormSendButton();
       }
     } else { // small viewports
@@ -331,14 +336,17 @@
 
     if (vw >= 768) {
       var contactModal = document.getElementById("contact-modal");
+      var backdrop = document.getElementById("backdrop");
       var closeButton = document.getElementsByClassName("close-contact-modal")[0];
 
       // show modal
       contactModal.style.display = "block";
+      backdrop.style.display = "block";
 
       // allow closing the modal
       closeButton.onclick = () => {
         contactModal.style.display = "none";
+        backdrop.style.display = "none";
       }
     } else {
       location.href = "#contact";
@@ -359,7 +367,6 @@
     var nav = document.getElementById("nav");
     nav.className = "main-nav";
   }
-
 
 </script>
 </body>
