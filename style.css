@@ -44,7 +44,6 @@ p {
     z-index: 1;
 }
 .main-nav a {
-    /* border: 1px solid white; */
     font-family: var(--font-mono);
     padding: 1.5rem 2.5rem 1.5rem .5rem;
     text-decoration: none;
@@ -60,7 +59,6 @@ p {
     font-size: 2rem;
 }
 .container {
-    /* border: 1px solid white; */
     box-sizing: border-box;
     width: 75%;
     min-height: 100vh;
@@ -68,7 +66,6 @@ p {
     padding-top: 22vh;
 }
 .flex-container {
-    /* border: 1px solid white; */
     display: flex;
     flex-flow: row wrap;
 }
@@ -107,7 +104,6 @@ p {
     color: var(--color-bright);
 }
 .section-header {
-    /* border: 1px solid white; */
     display: block;
     width: 100%;
     margin: auto;
@@ -128,7 +124,6 @@ p {
     color: var(--color-bg)
 }
 .flex-item {
-    /* border: 1px solid white; */
     flex: 1 1 0;
 }
 .about-flex-img {
@@ -138,7 +133,6 @@ p {
     height: auto;
 }
 .about-flex-p {
-    /* border: 1px solid white; */
     flex: 3 1 0;
     min-width: 320px;
 }
@@ -264,7 +258,7 @@ p {
     box-sizing: border-box;
     border: 2px solid var(--color-bright);
     border-radius: .3rem;
-    max-width: 320px;
+    max-width: 340px;
     min-width: 280px;
     min-height: 160px;
     padding: 2rem;
@@ -366,60 +360,24 @@ p {
 #contact-modal ::placeholder {
     color: var(--color-main);
 }
-@media (hover: hover) {
-    .main-nav a:hover {
-        color: var(--color-contrast);
-    }
-    .main-nav a:active {
-        color: var(--color-main);
-    }
-    .bi-linkedin:hover, .bi-github:hover {
-        transform: scale(1.1);
-    }
-    .bi-linkedin:active, .bi-github:active{
-        transform: scale(1.0);
-    }
-    .bi-arrow-up-circle:hover {
-        color: var(--color-contrast);
-    }
-    .bi-arrow-up-circle:active {
-        color: var(--color-main);
-    }
-    .about-flex-p a:hover {
-        color: var(--color-contrast);
-    }
-    .about-flex-p a:active {
-        color: var(--color-main);
-    }
-    #download-icon:hover {
-        background-color: #bbb;
-    }
-    .close:hover {
-        background-color: red;
-        color: var(--color-bright);
-    }
-    .card:hover {
-        transform: scale(1.02);
-    }
-    #contact input:hover, #contact textarea:hover {
-        border: 2px solid var(--color-contrast);
-    }
-    #contact-modal input:hover, #contact-modal textarea:hover {
-        transform: scale(1.01);
-    }
-    #contact .btn:hover {
-        cursor: pointer;
-        border: 2px solid var(--color-contrast);
-        background-color: var(--color-contrast);
-        color: var(--color-bg);
-    }
-    #contact-modal .btn:hover {
-        cursor: pointer;
-        background-color: var(--color-main);
-    }
-    #contact .btn:active, #contact-modal .btn:active {
-        transform: translate(1px, 2px);
-    }
+.bi-linkedin:hover, .bi-github:hover {
+    transform: scale(1.1);
+}
+.card:hover {
+    transform: scale(1.02);
+}
+#contact-modal input:hover, #contact-modal textarea:hover {
+    transform: scale(1.01);
+}
+#contact .btn:hover {
+    cursor: pointer;
+}
+#contact-modal .btn:hover {
+    cursor: pointer;
+    background-color: var(--color-main);
+}
+#contact .btn:active, #contact-modal .btn:active {
+    transform: translate(1px, 2px);
 }
 @media screen and (min-width: 601px) {
     .gap {gap: 1.5rem;}
@@ -442,10 +400,26 @@ p {
     .header-p {font-size: 1.2rem; margin-top: 2rem;}
     .bi-linkedin, .bi-github {font-size: 2.5rem; margin: 2rem;}
     #contact {display: none;}
+    #download-icon:hover {
+        background-color: #bbb;
+    }
+    .close:hover {
+        background-color: red;
+        color: var(--color-bright);
+    }
 }
 @media screen and (min-width: 992px) {
     .section-title {font-size: 3rem;}
     .bi-arrow-up-circle {font-size: 2.3rem; margin-left: 2rem;}
+    .main-nav a:hover {
+        color: var(--color-contrast);
+    }
+    .bi-arrow-up-circle:hover {
+        color: var(--color-contrast);
+    }
+    .about-flex-p a:hover {
+        color: var(--color-contrast);
+    }
 }
 @media screen and (max-width: 600px) {
     .gap {gap: 1rem;}
