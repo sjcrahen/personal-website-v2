@@ -32,7 +32,7 @@ p {
     font-weight: 200;
     padding-bottom: 1rem;
 }
-.main-nav-flex-container {
+#nav-container {
     display: flex;
     flex-flow: row-reverse;
     background-color: rgba(2,12,27,.8);
@@ -400,13 +400,6 @@ p {
     .header-p {font-size: 1.2rem; margin-top: 2rem;}
     .bi-linkedin, .bi-github {font-size: 2.5rem; margin: 2rem;}
     #contact {display: none;}
-    #download-icon:hover {
-        background-color: #bbb;
-    }
-    .close:hover {
-        background-color: red;
-        color: var(--color-bright);
-    }
 }
 @media screen and (min-width: 992px) {
     .section-title {font-size: 3rem;}
@@ -420,11 +413,18 @@ p {
     .about-flex-p a:hover {
         color: var(--color-contrast);
     }
+    #download-icon:hover {
+        background-color: #bbb;
+    }
+    .close:hover {
+        background-color: red;
+        color: var(--color-bright);
+    }
 }
 @media screen and (max-width: 600px) {
     .gap {gap: 1rem;}
     p {font-size: 1rem;}
-    .main-nav-flex-container {background-color: rgba(2,12,27,.8);}
+    #nav-container {background-color: rgba(2,12,27,0);}
     .main-nav a {
         display: none;
     }
@@ -442,7 +442,7 @@ p {
         right: 0px;
         top: 0px;
     }
-    .main-nav.responsive .main-nav-flex-container {
+    .main-nav.responsive #nav-container {
         flex-flow: column-reverse;
     }
     .main-nav.responsive a {

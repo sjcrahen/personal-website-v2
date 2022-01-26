@@ -1,8 +1,17 @@
+// sendEmail listeners
+const modalForm = document.querySelector("#modal-form");
+modalForm.addEventListener("submit", event => sendEmail(event));
+
+const form = document.querySelector("#form");
+form.addEventListener("submit", event => sendEmail(event));
+
 // send email to aws api gateway -> aws lambda -> aws ses
 function sendEmail(event) {
     event.preventDefault();
 
-    if (event.target.id === "modal-form") {
+    const form = event.target;
+
+    if (form.id === "modal-form") {
         var button = document.querySelector("#modal-submit");
     } else {
         var button = document.querySelector("#submit");
@@ -36,7 +45,7 @@ function sendEmail(event) {
             button.value = "Thank you!";
             button.style.color = "";
             button.style.backgroundColor = ""
-            button.disabled = true;
+            form.reset();
         }
     })
     .catch((error) => {
@@ -44,7 +53,7 @@ function sendEmail(event) {
             button.value = "ERROR!";
             button.style.color = "red";
             button.style.backgroundColor = ""
-            button.disabled = true;
+            form.reset();
         }
     });
 }
@@ -54,16 +63,10 @@ function resetFormSendButton() {
     const modalButton = document.querySelector("#modal-submit");
     modalButton.value = "Send";
     modalButton.style.color = "";
-    modalButton.style.backgroundColor = "";
-    modalButton.disabled = false;
 
     const button = document.querySelector("#submit");
     button.value = "Send";
     button.style.color = "";
-    button.disabled = false;
-
-    document.querySelector("#modal-form").reset();
-    document.querySelector("#form").reset();
 }
 
 // open and close resume modal
@@ -71,7 +74,7 @@ function getResume() {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth ||0);
 
     // for larger viewports show modal
-    if (vw >= 768) {
+    if (vw >= 992) {
         const resumeModal = document.querySelector("#resume-modal");
         const backdrop = document.querySelector("#backdrop");
         const downloadIcon = document.querySelector("#download-icon");
@@ -114,6 +117,7 @@ function showContact() {
 
         // allow closing the modal
         closeButton.onclick = () => {
+            resetFormSendButton();
             contactModal.style.display = "none";
             backdrop.style.display = "none";
         }
