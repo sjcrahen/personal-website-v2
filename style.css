@@ -399,9 +399,9 @@ p {
     .header-name, .header-pitch {font-size: 4rem;}
     .header-p {font-size: 1.2rem; margin-top: 2rem;}
     .bi-linkedin, .bi-github {font-size: 2.5rem; margin: 2rem;}
-    #contact {display: none;}
 }
 @media screen and (min-width: 992px) {
+    #contact {display: none;}
     .section-title {font-size: 3rem;}
     .bi-arrow-up-circle {font-size: 2.3rem; margin-left: 2rem;}
     .main-nav a:hover {
