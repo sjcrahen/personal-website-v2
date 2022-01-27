@@ -106,7 +106,7 @@ function openResume() {
 function showContact() {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth ||0);
 
-    if (vw >= 768) {
+    if (vw >= 992) {
         const contactModal = document.querySelector("#contact-modal");
         const backdrop = document.querySelector("#backdrop");
         const closeButton = document.querySelector("#close-contact-modal");
