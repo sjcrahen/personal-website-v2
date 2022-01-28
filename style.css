@@ -241,6 +241,9 @@ p {
     height: 6rem;
     border-radius: .3rem;
 }
+#spring-logo {
+    background-color: var(--color-bright);
+}
 .bi-box-arrow-up-right {
     width: 1rem;
     height: 1rem;
