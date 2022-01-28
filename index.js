@@ -1,9 +1,56 @@
-// sendEmail listeners
+// variables
 const modalForm = document.querySelector("#modal-form");
-modalForm.addEventListener("submit", event => sendEmail(event));
-
 const form = document.querySelector("#form");
-form.addEventListener("submit", event => sendEmail(event));
+const inputs = document.querySelectorAll("form > input, form > textarea");
+const sendButtons = document.querySelectorAll(".submit-button");
+const resumeModal = document.querySelector("#resume-modal");
+const backdrop = document.querySelector("#backdrop");
+const downloadIcon = document.querySelector("#download-icon");
+const resumeCloseButton = document.querySelector("#close-resume-modal");
+const contactModal = document.querySelector("#contact-modal");
+const contactCloseButton = document.querySelector("#close-contact-modal");
+const nav = document.querySelector("#nav");
+const navContainer = document.querySelector("#nav-container");
+const navLinks = document.querySelectorAll("#nav-container a");
+const contactLink = document.querySelector("#contact-link");
+const topLinks = document.querySelectorAll("div h2 a");
+const resumeLink = document.querySelector(".about-flex-p a");
+
+// listeners
+modalForm.addEventListener("submit", sendEmail);
+form.addEventListener("submit", sendEmail);
+inputs.forEach(input => input.addEventListener("focus", resetSendButton));
+window.addEventListener("resize", setupResponsiveNav);
+navLinks.forEach(link => link.addEventListener("click", showHideMenu));
+contactLink.addEventListener("click", showContact);
+topLinks.forEach(link => link.addEventListener("click", collapseMenu));
+resumeLink.addEventListener("click", getResume);
+
+//handle response nav bar on window size
+function setupResponsiveNav() {
+    if (window.innerWidth < 601) {
+        collapseMenu();
+    } else {
+        navContainer.style.backgroundColor = "rgba(2, 12, 27, .8)";
+    }
+}
+
+// toggle menu for small screens
+function showHideMenu() {
+    if (nav.className === "main-nav") {
+        nav.classList.add("responsive");
+        navContainer.style.backgroundColor = "rgba(2, 12, 27, .8)";
+    } else {
+        collapseMenu();
+    }
+}
+
+function collapseMenu() {
+    if (window.innerWidth < 601) {
+        nav.classList.remove("responsive");
+        navContainer.style.backgroundColor = "rgba(2, 12, 27, 0)";
+    }
+}
 
 // send email to aws api gateway -> aws lambda -> aws ses
 function sendEmail(event) {
@@ -58,27 +105,18 @@ function sendEmail(event) {
     });
 }
 
-// reset form buttons
-function resetFormSendButton() {
-    const modalButton = document.querySelector("#modal-submit");
-    modalButton.value = "Send";
-    modalButton.style.color = "";
-
-    const button = document.querySelector("#submit");
-    button.value = "Send";
-    button.style.color = "";
+function resetSendButton() {
+    sendButtons.forEach(btn => {
+        btn.value = "Send";
+        btn.style.color = ""
+    });
 }
 
 // open and close resume modal
 function getResume() {
-    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth ||0);
 
     // for larger viewports show modal
-    if (vw >= 992) {
-        const resumeModal = document.querySelector("#resume-modal");
-        const backdrop = document.querySelector("#backdrop");
-        const downloadIcon = document.querySelector("#download-icon");
-        const closeButton = document.querySelector("#close-resume-modal");
+    if (window.innerWidth >= 992) {
 
         //show modal
         resumeModal.style.display = "block";
@@ -88,10 +126,9 @@ function getResume() {
         downloadIcon.onclick = () => openResume();
 
         // allow closing the modal
-        closeButton.onclick = () => {
+        resumeCloseButton.onclick = () => {
             resumeModal.style.display = "none";
             backdrop.style.display = "none";
-            resetFormSendButton();
         }
     } else { // small viewports
         openResume(); 
@@ -104,20 +141,14 @@ function openResume() {
 
 // show contact modal on large screens
 function showContact() {
-    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth ||0);
-
-    if (vw >= 992) {
-        const contactModal = document.querySelector("#contact-modal");
-        const backdrop = document.querySelector("#backdrop");
-        const closeButton = document.querySelector("#close-contact-modal");
+    if (window.innerWidth >= 992) {
 
         // show modal
         contactModal.style.display = "block";
         backdrop.style.display = "block";
 
         // allow closing the modal
-        closeButton.onclick = () => {
-            resetFormSendButton();
+        contactCloseButton.onclick = () => {
             contactModal.style.display = "none";
             backdrop.style.display = "none";
         }

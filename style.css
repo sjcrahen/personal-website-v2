@@ -230,12 +230,26 @@ p {
     color: var(--color-main);
     text-decoration: none;
 }
+.card-img-box {
+    display: flex;
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .card-img {
     width: 6rem;
     height: 6rem;
-    padding: 1rem;
+    border-radius: .3rem;
+}
+.bi-box-arrow-up-right {
+    width: 1rem;
+    height: 1rem;
+    font-size: 2rem;
+    color: var(--color-bright);
+    padding: 1rem 2rem 2rem 1rem;
 }
 .card-h3 {
+    color: var(--color-bright);
     font-size: 1.5rem;
     padding: 1rem;
 }
@@ -424,7 +438,7 @@ p {
 @media screen and (max-width: 600px) {
     .gap {gap: 1rem;}
     p {font-size: 1rem;}
-    #nav-container {background-color: rgba(2,12,27,0);}
+    /* #nav-container {background-color: rgba(2,12,27,0);} */
     .main-nav a {
         display: none;
     }
@@ -435,8 +449,6 @@ p {
         position: fixed;
         right: 0;
         top: 0;
-    }
-    .main-nav.responsive {
         width: 130px;
         position: fixed;
         right: 0px;

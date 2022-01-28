@@ -35,12 +35,12 @@
 
 <nav id="nav" class="main-nav">
   <div id="nav-container">
-  <a href="javascript:void(0)" onclick="showContact(); showHideMenu();">Contact</a>
-  <a href="#skills" onclick="showHideMenu();">Skills</a>
-  <a href="#education" onclick="showHideMenu();">Education</a>
-  <a href="#projects" onclick="showHideMenu();">Projects</a>
-  <a href="#about" onclick="showHideMenu();">About</a>
-  <a href="javascript:void(0)" class="menu-icon" onclick="showHideMenu();"><i class="bi bi-list"></i></a>
+  <a href="javascript:void(0)" id="contact-link">Contact</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0)" class="menu-icon"><i class="bi bi-list"></i></a>
   </div>
 </nav>
 
@@ -62,7 +62,7 @@
 <div id="about" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">About me<a href="#" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">About me<a href="#"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container gap">
   <div class="flex-item">
@@ -71,7 +71,7 @@
   <div class="about-flex-p">
     <p class="color-main"><strong>Ending one journey, beginning another...</strong></p>
     <p class="color-main">I spent 20 years developing mastery in leadership, management, mentoring, and Coast Guard operations, while simultaneously raising a family and pursuing a life of learning. Poised for rapid growth as I transition to a new career, I am ready to take on new challenges and apply my experience to continued pursuit of excellence.</p>
-    <a href="javascript:void(0)" onclick="getResume();"><p class="resume mono">resume<i class="bi bi-file-earmark-arrow-down"></i></p></a>
+    <a href="javascript:void(0)"><p class="resume mono">resume<i class="bi bi-file-earmark-arrow-down"></i></p></a>
   </div>
   </div>
 </div>
@@ -92,13 +92,13 @@
 <div id="projects" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Software Projects<a href="#" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Software Projects<a href="#"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container card-block gap">
     <a href="">
     <div class="flex-item card">
     <div class="card-img-box">
-    <img class="card-img" src="spring-logo.png" alt="New app coming soon...">
+    <img class="card-img" src="spring-logo.svg" style="background-color: white;" alt="New app coming soon...">
     </div>
     <div class="card-desc sans">
       <h3 class="card-h3">Spring Framework App</h3>
@@ -112,6 +112,7 @@
     <div class="flex-item card">
     <div class="card-img-box">
     <img class="card-img" src="Calculator.ico" alt="Image of Calculator">
+    <i class="bi bi-box-arrow-up-right"></i>
     </div>
     <div class="card-desc sans">
       <h3 class="card-h3">BigCalculator</h3>
@@ -128,6 +129,7 @@
     <div class="flex-item card">
     <div class="card-img-box">
     <img class="card-img" src="minesweeper.jpg" alt="Image of Minesweeper">
+    <i class="bi bi-box-arrow-up-right"></i>
     </div>
     <div class="card-desc sans">
       <h3 class="card-h3">Minesweeper</h3>
@@ -147,7 +149,7 @@
 <div id="education" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Education<a href="#" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Education<a href="#"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container ed-flex-item-container gap">
     <div class="flex-item ed-flex-item color-main sans">
@@ -170,7 +172,7 @@
 <div id="skills" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Languages & Technologies<a href="#" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Languages & Technologies<a href="#"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
   <div class="flex-container skills-flex-item-container gap color-main sans">
     <p class="flex-skill">Java</p>
@@ -196,16 +198,16 @@
 <div id="contact" class="container">
 <div class="flex-container gap">
 <div class="section-header">
-  <h2 class="section-title color-bright sans">Contact<a href="#" onclick="collapseMenu();"><i class="bi bi-arrow-up-circle"></i></a></h2>
+  <h2 class="section-title color-bright sans">Contact<a href="#"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
 <div class="flex-container contact-form-flex-container">
   <form id="form">
     <input type="text" name="name" placeholder="Name" autocomplete="off" required>
     <input type="email" name="email" placeholder="Email" autocomplete="off" required>
-    <input type="text" name="subject" placeholder="Subject" autocomplete="off" required>
+    <input type="text" name="subject" placeholder="Subject" autocomplete="off">
     <textarea rows="5" name="message" placeholder="Enter your message" autocomplete="off" required></textarea>
     <input type="submit" id="submit" class="submit-button btn" value="Send">
-		<input type="reset" class="btn" onclick="resetFormSendButton();" value="Clear Form">
+		<input type="reset" class="btn" value="Reset">
   </form>
 </div>
 </div>
@@ -224,41 +226,15 @@
       <form id="modal-form">
         <input type="text" name="name" placeholder="Name" autocomplete="off" required>
         <input type="email" name="email" placeholder="Email" autocomplete="off" required>
-        <input type="text" name="subject" placeholder="Subject" autocomplete="off" required>
+        <input type="text" name="subject" placeholder="Subject" autocomplete="off">
         <textarea rows="5" name="message" placeholder="Enter your message" autocomplete="off" required></textarea>
         <input type="submit" id="modal-submit" class="submit-button btn" value="Send">
-        <input type="reset" class="btn" onclick="resetFormSendButton();" value="Clear Form">
+        <input type="reset" class="btn" value="Reset">
       </form>
     </div>
     </div>
   </div>
 </div>
 
-<!------------ Scripts ------------>
-
-<script>
-
-  // toggle menu for small screens
-  function showHideMenu() {
-    const nav = document.querySelector("#nav");
-    const navContainer = document.querySelector("#nav-container");
-
-    if (nav.className === "main-nav") {
-      nav.className += " responsive";
-      navContainer.style.backgroundColor = "rgba(2, 12, 27, .8)";
-    } else {
-      collapseMenu();
-    }
-  }
-
-  function collapseMenu() {
-    const nav = document.querySelector("#nav");
-    const navContainer = document.querySelector("#nav-container");
-
-    nav.className = "main-nav";
-    navContainer.style.backgroundColor = "rgba(2, 12, 27, 0)";
-  }
-
-</script>
 </body>
 </html>
