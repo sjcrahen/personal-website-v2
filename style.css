@@ -441,7 +441,7 @@ p {
 @media screen and (max-width: 600px) {
     .gap {gap: 1rem;}
     p {font-size: 1rem;}
-    /* #nav-container {background-color: rgba(2,12,27,0);} */
+    #nav-container {background-color: rgba(2,12,27,0);}
     .main-nav a {
         display: none;
     }

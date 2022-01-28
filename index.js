@@ -20,14 +20,14 @@ const resumeLink = document.querySelector(".about-flex-p a");
 modalForm.addEventListener("submit", sendEmail);
 form.addEventListener("submit", sendEmail);
 inputs.forEach(input => input.addEventListener("focus", resetSendButton));
-window.addEventListener("resize", setupResponsiveNav);
+window.addEventListener("resize", initResponsiveNav);
 navLinks.forEach(link => link.addEventListener("click", showHideMenu));
 contactLink.addEventListener("click", showContact);
 topLinks.forEach(link => link.addEventListener("click", collapseMenu));
 resumeLink.addEventListener("click", getResume);
 
 //handle response nav bar on window size
-function setupResponsiveNav() {
+function initResponsiveNav() {
     if (window.innerWidth < 601) {
         collapseMenu();
     } else {
