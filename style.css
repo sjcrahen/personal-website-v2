@@ -273,7 +273,7 @@ p {
     min-width: 280px;
     min-height: 160px;
     padding: 2rem;
-    flex: 1 1 0;
+    flex: 1 1 380px;
 }
 .ed-flex-item small {
     font-size: 1rem;
