@@ -241,9 +241,6 @@ p {
     height: 6rem;
     border-radius: .3rem;
 }
-#spring-logo {
-    background-color: var(--color-bright);
-}
 .bi-box-arrow-up-right {
     width: 1rem;
     height: 1rem;
@@ -272,7 +269,7 @@ p {
     box-sizing: border-box;
     border: 2px solid var(--color-bright);
     border-radius: .3rem;
-    max-width: 340px;
+    max-width: 380px;
     min-width: 280px;
     min-height: 160px;
     padding: 2rem;
@@ -301,6 +298,9 @@ p {
     width: 1.5em;
     height: auto;
     margin: 0 0.3em 0 0;
+}
+#skills {
+    margin-bottom: 40px;
 }
 .skills-flex-item-container {
     width: 95%;
