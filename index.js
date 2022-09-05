@@ -33,7 +33,6 @@ function initResponsiveNav() {
   if (window.innerWidth < 601) {
     collapseMenu();
   } else {
-    navContainer.classList.add("md");
     navContainer.classList.remove("sm");
   }
 }

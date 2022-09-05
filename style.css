@@ -35,8 +35,6 @@ p {
 #nav-container {
     display: flex;
     flex-flow: row-reverse;
-}
-#nav-container.md {
     background-color: rgba(2,12,27, 0.8);
 }
 .main-nav {
@@ -463,7 +461,7 @@ p {
         transition: background-color .5s ease-out;
     }
     #nav-container.sm {
-        background-color: rgba(2,12,27, 1);
+        background-color: rgba(2,12,27, .8);
     }
     #nav-container.transparent {
         background-color: rgba(2,12,27, 0);
@@ -475,10 +473,12 @@ p {
     .main-nav a.menu-icon {
         display: block;
     }
-    .main-nav.responsive {
+    .main-nav {
         width: 130px;
         position: fixed;
-        right: 0px;
+        right: 0;
+    }
+    .main-nav.responsive {
         height: 100vh;
     }
     .main-nav.responsive #nav-container {
