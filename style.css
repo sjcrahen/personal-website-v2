@@ -35,7 +35,9 @@ p {
 #nav-container {
     display: flex;
     flex-flow: row-reverse;
-    background-color: rgba(2,12,27,.8);
+}
+#nav-container.md {
+    background-color: rgba(2,12,27, 0.8);
 }
 .main-nav {
     position: fixed;
@@ -185,7 +187,8 @@ p {
 }
 .contact-modal-container {
     max-height: 89vh;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 #download-icon {
     padding: .3rem 1.5rem 0;
@@ -206,6 +209,7 @@ p {
     cursor: pointer;
 }
 .close-contact-modal {
+    border-radius: 0;
     color: var(--color-bg);
     float: right;
 }
@@ -321,6 +325,16 @@ p {
 .contact-form-flex-container {
     width: 95%;
     margin: auto;
+}
+.contactform {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+    cursor: default;
 }
 #contact input, #contact textarea {
     box-sizing: border-box;
@@ -442,24 +456,38 @@ p {
 @media screen and (max-width: 600px) {
     .gap {gap: 1rem;}
     p {font-size: 1rem;}
-    #nav-container {background-color: rgba(2,12,27,0);}
+    #nav-container {
+        background-color: rgba(2,12,27, 0);
+        width: 130px;
+        float: right;
+        transition: background-color .5s ease-out;
+    }
+    #nav-container.sm {
+        background-color: rgba(2,12,27, 1);
+    }
+    #nav-container.transparent {
+        background-color: rgba(2,12,27, 0);
+    }
     .main-nav a {
         display: none;
+        transition: display .6s ease-in-out;
     }
     .main-nav a.menu-icon {
         display: block;
     }
     .main-nav.responsive {
-        position: fixed;
-        right: 0;
-        top: 0;
         width: 130px;
         position: fixed;
         right: 0px;
-        top: 0px;
+        height: 100vh;
     }
     .main-nav.responsive #nav-container {
         flex-flow: column-reverse;
+        justify-content: flex-end;
+    }
+    @keyframes fadein {
+        from {color: var(--color-bg)}
+        to {color: var(--color-bright)}
     }
     .main-nav.responsive a {
         font-size: 1rem;
@@ -468,9 +496,7 @@ p {
         display: block;
         direction: rtl;
         text-align: right;
-    }
-    .main-nav.responsive a.menu-icon {
-        padding: 1.5rem 2.5rem 0 0;
+        animation: fadein .5s ease-in-out;
     }
     .container {
         width: 90%;
@@ -483,4 +509,46 @@ p {
     .bi-arrow-up-circle {font-size: 1.8rem; margin-left: 1rem;}
     .section-title {font-size: 2rem;}
     #contact input, #contact textarea {margin-bottom: .8rem;}
+    #hamburger {
+        display: inline-block;
+        position: relative;
+        width: 32px;
+        height: 30px;
+        margin: 30px auto;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+    #hamburger span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: var(--color-bright);
+        border-radius: 3px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+    #hamburger span:nth-child(1) {
+        bottom: 20px;
+    }
+    #hamburger span:nth-child(2), #hamburger span:nth-child(3) {
+        bottom: 10px;
+    }
+    #hamburger span:nth-child(4) {
+        bottom: 0px;
+    }
+    #hamburger.open span:nth-child(1), #hamburger.open span:nth-child(4) {
+        bottom: 10px;
+        width: 0%;
+        left: 50%;
+    }
+    #hamburger.open span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+    #hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
 }

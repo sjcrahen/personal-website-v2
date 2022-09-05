@@ -35,12 +35,17 @@
 
 <nav id="nav" class="main-nav">
   <div id="nav-container">
-  <a href="https://www.linkedin.com/in/shawnjcrahen" target="_blank" id="contact-link">Contact</a>
-  <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
-  <a href="#projects">Projects</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0)" class="menu-icon"><i class="bi bi-list"></i></a>
+    <a href="#contact" id="contact-link">Contact</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <div id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </nav>
 
@@ -50,7 +55,9 @@
   <p class="small color-contrast mono">Hello, my name is<p>
   <h1 class="header-name color-bright sans">Shawn Crahen.</h1>
   <h2 class="header-pitch color-main sans">I am a Software Developer.<h2>
-  <p class="header-p color-main sans">Transitioning to a second career as a software developer after 20 years of military service. A recent Computer Science graduate - studied software engineering, machine learning, data mining, big data analytics, and distributed systems. Skilled in full-stack web development and cloud computing. Passionate about delivering value and exceeding customer expectations.</p>
+  <p class="header-p color-main sans">
+    I am a full-stack developer who is passionate about delivering business value and exceeding customer expectations. Skilled in Java, Spring, Hibernate, Thymeleaf, SQL, Javascript/jQuery, HTML/CSS, Git, Agile. Interested in building teams who are greater than the sum of their parts.
+  </p>
   <div class="header-icons">
     <a href="https://www.linkedin.com/in/shawnjcrahen" target="_blank"><i class="bi bi-linkedin color-contrast"></i></a>
     <a href="https://github.com/sjcrahen" target="_blank"><i class="bi bi-github color-contrast"></i></a>
@@ -69,8 +76,13 @@
     <p><img src="head-shot.jpg" class="about-flex-img" alt="47ft MLB in Surf"></p>
   </div>
   <div class="about-flex-p">
-    <p class="color-main"><strong>Ending one journey, beginning another...</strong></p>
-    <p class="color-main">I spent 20 years developing mastery in leadership, management, mentoring, and Coast Guard operations, while simultaneously raising a family and pursuing a life of learning. Poised for rapid growth as I transition to a new career, I am ready to take on new challenges and apply my experience to continued pursuit of excellence.</p>
+    <p class="color-main">
+      <strong>Not your average software developer...</strong>
+      <br/><br/>
+      After a 20-year military career and completion of a Master's degree in Computer Science, I transitioned to a second career as a full-stack developer where I leverage my analytical mind and attention to detail to deliver high-quality enterprise software.
+      <br/><br/>
+      As a Coast Guard senior leader, I developed expertise in leadership, management, training, and mentorship, and advanced to the highest enlisted paygrade (E-9, Master Chief Petty Officer). During my career I earned numerous small boat and law enforcement certifications, trained countless numbers in Coast Guard operations, and collaborated with federal, state, and local partners to ensure the safety of life at sea. As an Officer in Charge from 2017-2022, I led teams to overwhelming success in the execution of over 2,000 missions.
+    </p>
     <a href="javascript:void(0)"><p class="resume mono">resume<i class="bi bi-file-earmark-arrow-down"></i></p></a>
   </div>
   </div>
@@ -227,27 +239,33 @@
 
 <!------------ Contact Me ------------>
 
-<!-- <div id="contact" class="container">
+<div id="contact" class="container">
 <div class="flex-container gap">
 <div class="section-header">
   <h2 class="section-title color-bright sans">Contact<a href="#"><i class="bi bi-arrow-up-circle"></i></a></h2>
 </div>
 <div class="flex-container contact-form-flex-container">
   <form id="form">
-    <input type="text" name="name" placeholder="Name" autocomplete="off" required>
-    <input type="email" name="email" placeholder="Email" autocomplete="off" required>
-    <input type="text" name="subject" placeholder="Subject" autocomplete="off">
-    <textarea rows="5" name="message" placeholder="Enter your message" autocomplete="off" required></textarea>
+    <input type="text" name="namedc6e35a706d68e5e7908150245876d24a6208f0f" placeholder="Name" autocomplete="off" required maxlength="100">
+    <input type="email" name="emaildc6e35a706d68e5e7908150245876d24a6208f0f" placeholder="Email" autocomplete="off" required>
+    <input type="text" name="subjectdc6e35a706d68e5e7908150245876d24a6208f0f" placeholder="Subject" autocomplete="off">
+    <textarea rows="5" name="messagedc6e35a706d68e5e7908150245876d24a6208f0f" placeholder="Enter your message" autocomplete="off" required></textarea>
+
+    <input class="contactform" type="text" name="name" placeholder="Name" autocomplete="off" maxlength="100">
+    <input class="contactform" type="email" name="email" placeholder="Email" autocomplete="off">
+    <input class="contactform" type="text" name="subject" placeholder="Subject" autocomplete="off">
+    <textarea class="contactform" rows="5" name="message" placeholder="Enter your message" autocomplete="off"></textarea>
+
     <input type="submit" id="submit" class="submit-button btn" value="Send">
 		<input type="reset" class="btn" value="Reset">
   </form>
 </div>
 </div>
-</div> -->
+</div>
 
 <!------------ Contact Modal ------------>
 
-<!-- <div id="contact-modal" class="modal contact-modal-container">
+<div id="contact-modal" class="modal contact-modal-container">
   <span id="close-contact-modal" class="close close-contact-modal">&times;</span>
   <div class="flex-container modal-content">
     <div class="flex-container gap">
@@ -260,13 +278,19 @@
         <input type="email" name="email" placeholder="Email" autocomplete="off" required>
         <input type="text" name="subject" placeholder="Subject" autocomplete="off">
         <textarea rows="5" name="message" placeholder="Enter your message" autocomplete="off" required></textarea>
+
+        <input class="contactform" type="text" name="name" placeholder="Name" autocomplete="off" maxlength="100">
+        <input class="contactform" type="email" name="email" placeholder="Email" autocomplete="off">
+        <input class="contactform" type="text" name="subject" placeholder="Subject" autocomplete="off">
+        <textarea class="contactform" rows="5" name="message" placeholder="Enter your message" autocomplete="off"></textarea>
+
         <input type="submit" id="modal-submit" class="submit-button btn" value="Send">
         <input type="reset" class="btn" value="Reset">
       </form>
     </div>
     </div>
   </div>
-</div> -->
+</div>
 
 </body>
 </html>

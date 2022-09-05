@@ -15,23 +15,26 @@ const navLinks = document.querySelectorAll("#nav-container a");
 const contactLink = document.querySelector("#contact-link");
 const topLinks = document.querySelectorAll("div h2 a");
 const resumeLink = document.querySelector(".about-flex-p a");
+const hamburger = document.querySelector("#hamburger");
 
 // listeners
-// modalForm.addEventListener("submit", sendEmail);
-// form.addEventListener("submit", sendEmail);
+modalForm.addEventListener("submit", sendEmail);
+form.addEventListener("submit", sendEmail);
 inputs.forEach((input) => input.addEventListener("focus", resetSendButton));
 window.addEventListener("resize", initResponsiveNav);
 navLinks.forEach((link) => link.addEventListener("click", showHideMenu));
 contactLink.addEventListener("click", showContact);
 topLinks.forEach((link) => link.addEventListener("click", collapseMenu));
 resumeLink.addEventListener("click", getResume);
+hamburger.addEventListener("click", toggleHamburger);
 
 //handle response nav bar on window size
 function initResponsiveNav() {
   if (window.innerWidth < 601) {
     collapseMenu();
   } else {
-    navContainer.style.backgroundColor = "rgba(2, 12, 27, .8)";
+    navContainer.classList.add("md");
+    navContainer.classList.remove("sm");
   }
 }
 
@@ -39,7 +42,9 @@ function initResponsiveNav() {
 function showHideMenu() {
   if (nav.className === "main-nav") {
     nav.classList.add("responsive");
-    navContainer.style.backgroundColor = "rgba(2, 12, 27, .8)";
+    navContainer.classList.add("sm");
+    navContainer.classList.remove("transparent");
+    navContainer.style.height = "100%";
   } else {
     collapseMenu();
   }
@@ -48,56 +53,83 @@ function showHideMenu() {
 function collapseMenu() {
   if (window.innerWidth < 601) {
     nav.classList.remove("responsive");
-    navContainer.style.backgroundColor = "rgba(2, 12, 27, 0)";
+    navContainer.classList.add("transparent");
   }
+  hamburger.classList.remove("open");
+}
+
+function toggleHamburger() {
+  if (hamburger.classList.contains("open")) {
+    hamburger.classList.remove("open");
+  } else {
+    hamburger.classList.add("open");
+  }
+  showHideMenu();
 }
 
 // send email to aws api gateway -> aws lambda -> aws ses
 function sendEmail(event) {
-  //   event.preventDefault();
-  //   const form = event.target;
-  //   if (form.id === "modal-form") {
-  //     var button = document.querySelector("#modal-submit");
-  //   } else {
-  //     var button = document.querySelector("#submit");
-  //   }
-  //   if (button) {
-  //     button.value = "Sending ...";
-  //   }
-  //   const { name, email, subject, message } = event.target;
-  //   const endpoint =
-  //     "https://53wpstdce3.execute-api.us-east-1.amazonaws.com/default/sendEmail";
-  //   const body = JSON.stringify({
-  //     senderName: name.value,
-  //     senderEmail: email.value,
-  //     subject: subject.value,
-  //     message: message.value,
-  //   });
-  //   const requestOptions = {
-  //     method: "POST",
-  //     body,
-  //   };
-  //   fetch(endpoint, requestOptions)
-  //     .then((response) => {
-  //       if (!response.ok) throw new Error("Error in fetch");
-  //       return response.json();
-  //     })
-  //     .then((response) => {
-  //       if (button) {
-  //         button.value = "Thank you!";
-  //         button.style.color = "";
-  //         button.style.backgroundColor = "";
-  //         form.reset();
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       if (button) {
-  //         button.value = "ERROR!";
-  //         button.style.color = "red";
-  //         button.style.backgroundColor = "";
-  //         form.reset();
-  //       }
-  //     });
+  event.preventDefault();
+  const form = event.target;
+  if (form.id === "modal-form") {
+    var button = document.querySelector("#modal-submit");
+  } else {
+    var button = document.querySelector("#submit");
+  }
+  if (button) {
+    button.value = "Sending ...";
+  }
+  const {
+    name,
+    email,
+    subject,
+    message,
+    namedc6e35a706d68e5e7908150245876d24a6208f0f,
+    emaildc6e35a706d68e5e7908150245876d24a6208f0f,
+    subjectdc6e35a706d68e5e7908150245876d24a6208f0f,
+    messagedc6e35a706d68e5e7908150245876d24a6208f0f,
+  } = event.target;
+  if (
+    name.value !== "" ||
+    email.value !== "" ||
+    subject.value !== "" ||
+    message.value !== ""
+  ) {
+    return;
+  }
+  const endpoint =
+    "https://53wpstdce3.execute-api.us-east-1.amazonaws.com/default/sendEmail";
+  const body = JSON.stringify({
+    senderName: namedc6e35a706d68e5e7908150245876d24a6208f0f.value,
+    senderEmail: emaildc6e35a706d68e5e7908150245876d24a6208f0f.value,
+    subject: subjectdc6e35a706d68e5e7908150245876d24a6208f0f.value,
+    message: messagedc6e35a706d68e5e7908150245876d24a6208f0f.value,
+  });
+  const requestOptions = {
+    method: "POST",
+    body,
+  };
+  fetch(endpoint, requestOptions)
+    .then((response) => {
+      if (!response.ok) throw new Error("Error in fetch");
+      return response.json();
+    })
+    .then((response) => {
+      if (button) {
+        button.value = "Thank you!";
+        button.style.color = "";
+        button.style.backgroundColor = "";
+        form.reset();
+      }
+    })
+    .catch((error) => {
+      if (button) {
+        button.value = "ERROR!";
+        button.style.color = "red";
+        button.style.backgroundColor = "";
+        form.reset();
+      }
+    });
 }
 
 function resetSendButton() {
@@ -135,16 +167,16 @@ function openResume() {
 
 // show contact modal on large screens
 function showContact() {
-  // if (window.innerWidth >= 992) {
-  //     // show modal
-  //     contactModal.style.display = "block";
-  //     backdrop.style.display = "block";
-  //     // allow closing the modal
-  //     contactCloseButton.onclick = () => {
-  //         contactModal.style.display = "none";
-  //         backdrop.style.display = "none";
-  //     }
-  // } else {
-  //     location.href = "#contact";
-  // }
+  if (window.innerWidth >= 992) {
+    // show modal
+    contactModal.style.display = "block";
+    backdrop.style.display = "block";
+    // allow closing the modal
+    contactCloseButton.onclick = () => {
+      contactModal.style.display = "none";
+      backdrop.style.display = "none";
+    };
+  } else {
+    location.href = "#contact";
+  }
 }
