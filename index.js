@@ -39,11 +39,10 @@ function initResponsiveNav() {
 
 // toggle menu for small screens
 function showHideMenu() {
-  if (nav.className === "main-nav") {
-    nav.classList.add("responsive");
-    navContainer.classList.add("sm");
+  if (nav.className !== "main-nav open") {
+    nav.classList.add("open");
+    navLinks.forEach((e) => e.classList.add("responsive"));
     navContainer.classList.remove("transparent");
-    navContainer.style.height = "100%";
   } else {
     collapseMenu();
   }
@@ -51,8 +50,11 @@ function showHideMenu() {
 
 function collapseMenu() {
   if (window.innerWidth < 601) {
-    nav.classList.remove("responsive");
+    nav.classList.remove("open");
+    navLinks.forEach((e) => e.classList.remove("responsive"));
     navContainer.classList.add("transparent");
+  } else {
+    navContainer.classList.remove("transparent");
   }
   hamburger.classList.remove("open");
 }
