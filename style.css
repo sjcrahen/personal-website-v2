@@ -481,11 +481,11 @@ p {
         direction: rtl;
         text-align: right;
         opacity: 0;
-        transition: opacity .7s ease-in-out;
+        transition: opacity .8s ease-in-out;
     }
     a.navlink.responsive {
         opacity: 1;
-        transition: opacity .7s ease-in-out;
+        transition: opacity .5s ease-in-out;
     }
     .container {
         width: 90%;
