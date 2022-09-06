@@ -462,7 +462,7 @@ p {
     }
     #nav-container.transparent {
         background-color: rgba(2,12,27, 0);
-        transition: background-color 1s ease-out;
+        transition: background-color .7s ease-out;
     }
     .main-nav {
         width: 130px;
@@ -480,12 +480,14 @@ p {
         display: block;
         direction: rtl;
         text-align: right;
+        visibility: hidden;
         opacity: 0;
-        transition: opacity .8s ease-in-out;
+        transition: opacity .6s ease-in-out;
     }
     a.navlink.responsive {
+        visibility: visible;
         opacity: 1;
-        transition: opacity .5s ease-in-out;
+        transition: opacity .6s ease-in-out;
     }
     .container {
         width: 90%;

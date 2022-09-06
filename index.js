@@ -19,6 +19,7 @@ window.onload = new (function () {
   const hamburger = document.querySelector("#hamburger");
 
   if (window.innerWidth > 600) {
+    console.log("test");
     navContainer.classList.remove("transparent");
   }
 
