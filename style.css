@@ -43,7 +43,7 @@ p {
     width: 100%;
     z-index: 1;
 }
-.mobile-nav-container {
+.mobile-nav {
     height: 100vh;
     padding-top: 60px;
     visibility: hidden;
@@ -464,42 +464,22 @@ p {
         visibility: hidden;
         z-index: 0;
     }
-    .mobile-nav {
-        visibility: hidden;
-        z-index: 0;
-        background-color: rgba(2,12,27, 0);
-        /* transition: background-color 1s; */
-    }
     .mobile-nav.open {
         visibility: visible;
         z-index: 1;
         background-color: rgba(2,12,27, 0.9);
-        /* transition: background-color 1s; */
-    }
-    .mobile-nav-container {
-        /* background-color: rgba(2,12,27, 0.9); */
-        transition: background-color 1s;
-        z-index: 1;
-    }
-    .mobile-nav-container.transparent {
-        /* background-color: rgba(2,12,27, 0); */
-        transition: background-color 1s;
-        z-index: 0;
-        visibility: hidden;
+        transition: background-color .6s;
     }
     a.mobile.navlink {
         font-size: 2rem;
         padding: 0;
         padding-top: 2rem;
         display: block;
-        visibility: hidden;
         opacity: 0;
-        transition: opacity .4s;
     }
     a.mobile.navlink.responsive {
-        visibility: visible;
         opacity: 1;
-        transition: opacity .6s;
+        transition: opacity 1.2s;
         text-align: center;
     }
     .container {
