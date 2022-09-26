@@ -455,8 +455,7 @@ p {
     .gap {gap: 1rem;}
     p {font-size: 1rem;}
     #nav-container {
-        width: 130px;
-        float: right;
+        width: 100%;
         height: 100vh;
         transition: background-color .5s ease-out;
     }
@@ -464,22 +463,15 @@ p {
         background-color: rgba(2,12,27, 0);
         transition: background-color .7s ease-out;
     }
-    .main-nav {
-        width: 130px;
-        position: fixed;
-        right: 0;
-    }
     .main-nav #nav-container {
         flex-flow: column-reverse;
         justify-content: flex-end;
+        align-items: center;
     }
     a.navlink {
-        font-size: 1rem;
-        padding: .5rem 2.5rem;
-        float: none;
+        font-size: 2rem;
+        padding: 1rem 0;
         display: block;
-        direction: rtl;
-        text-align: right;
         visibility: hidden;
         opacity: 0;
         transition: opacity .6s ease-in-out;
@@ -505,7 +497,7 @@ p {
         position: relative;
         width: 32px;
         height: 30px;
-        margin: 30px auto;
+        margin: 30px 0 30px 70%;
         transform: rotate(0deg);
         transition: .5s ease-in-out;
         cursor: pointer;
