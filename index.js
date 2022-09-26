@@ -10,9 +10,9 @@ window.onload = new (function () {
   const resumeCloseButton = document.querySelector("#close-resume-modal");
   const contactModal = document.querySelector("#contact-modal");
   const contactCloseButton = document.querySelector("#close-contact-modal");
-  const nav = document.querySelector("#nav");
-  const navContainer = document.querySelector("#nav-container");
-  const navLinks = document.querySelectorAll("#nav-container a");
+  const nav = document.querySelector("#mobile-nav");
+  const navContainer = document.querySelector(".mobile-nav-container");
+  const navLinks = document.querySelectorAll("a.mobile.navlink");
   const contactLink = document.querySelector("#contact-link");
   const topLinks = document.querySelectorAll("div h2 a");
   const resumeLink = document.querySelector(".about-flex-p a");
@@ -45,7 +45,7 @@ window.onload = new (function () {
 
   // toggle menu for small screens
   function showHideMenu() {
-    if (nav.className !== "main-nav open") {
+    if (nav.className !== "mobile-nav open") {
       nav.classList.add("open");
       navLinks.forEach((e) => e.classList.add("responsive"));
       navContainer.classList.remove("transparent");
