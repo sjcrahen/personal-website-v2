@@ -301,9 +301,9 @@ p {
 }
 .cert-flex-item img {
     width: 48px;
-    height: fit-content;
+    height: 48px;
 }
-.cert-flex-item small, .cert-flex-item h4{
+.cert-flex-item small, .cert-flex-item h4 {
     width:100%;
 }
 .ed-flex-item small {
