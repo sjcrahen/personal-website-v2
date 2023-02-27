@@ -269,11 +269,11 @@ p {
     position: absolute;
     bottom: .1rem;
 }
-.ed-flex-item-container {
+.ed-flex-item-container, .cert-flex-item-container {
     width: 100%;
     justify-content: space-evenly;
 }
-.ed-flex-item {
+.ed-flex-item, .cert-flex-item {
     box-sizing: border-box;
     border: 2px solid var(--color-bright);
     border-radius: .3rem;
@@ -282,6 +282,29 @@ p {
     min-height: 160px;
     padding: 2rem;
     flex: 1 1 380px;
+}
+.cert-flex-item {
+    display:flex;
+    align-items: center;
+    min-width: 360px;
+    max-width: 420px;
+    padding: 1.5rem;
+    min-height: unset;
+}
+.cert-flex-item > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 12px;
+}
+.cert-flex-item h4 {
+    margin: 4px 0;
+}
+.cert-flex-item img {
+    width: 48px;
+    height: fit-content;
+}
+.cert-flex-item small, .cert-flex-item h4{
+    width:100%;
 }
 .ed-flex-item small {
     font-size: 1rem;
@@ -415,49 +438,7 @@ p {
 #contact .btn:active, #contact-modal .btn:active {
     transform: translate(1px, 2px);
 }
-@media screen and (min-width: 601px) {
-    .gap {gap: 1.5rem;}
-    .main-nav a {font-size: 1rem;}
-    .section-title {font-size: 2rem;}
-    .bi-arrow-up-circle {font-size: 1.8rem; margin-left: 1rem;}
-    .small {font-size: 1rem;}
-    .header-name, .header-pitch {font-size: 3rem;}
-    .header-p {font-size: 1rem; margin-top: 1.5rem;}
-    .bi-linkedin, .bi-github {font-size: 2rem; margin: 1.5rem;}
-    #contact input, #contact textarea {margin-bottom: .8rem;}
-}
-@media screen and (min-width: 768px) {
-    .gap {gap: 2rem;}
-    .main-nav a {font-size: 1.2rem;}
-    .section-title {font-size: 2.5rem;}
-    .bi-arrow-up-circle {font-size: 2rem; margin-left: 1.5rem;}
-    .small {font-size: 1.2rem;}
-    .header-name, .header-pitch {font-size: 4rem;}
-    .header-p {font-size: 1.2rem; margin-top: 2rem;}
-    .bi-linkedin, .bi-github {font-size: 2.5rem; margin: 2rem;}
-}
-@media screen and (min-width: 992px) {
-    #contact {display: none;}
-    .section-title {font-size: 3rem;}
-    .bi-arrow-up-circle {font-size: 2.3rem; margin-left: 2rem;}
-    .main-nav a:hover {
-        color: var(--color-contrast);
-    }
-    .bi-arrow-up-circle:hover {
-        color: var(--color-contrast);
-    }
-    .about-flex-p a:hover {
-        color: var(--color-contrast);
-    }
-    #download-icon:hover {
-        background-color: #bbb;
-    }
-    .close:hover {
-        background-color: red;
-        color: var(--color-bright);
-    }
-}
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .gap {gap: 1rem;}
     p {font-size: 1rem;}
     .main-nav {
@@ -542,5 +523,48 @@ p {
     }
     #hamburger.open span:nth-child(3) {
         transform: rotate(-45deg);
+    }
+}
+@media screen and (min-width: 601px) {
+    .gap {gap: 1.5rem;}
+    .main-nav a {font-size: 1rem;}
+    .section-title {font-size: 2rem;}
+    .bi-arrow-up-circle {font-size: 1.8rem; margin-left: 1rem;}
+    .small {font-size: 1rem;}
+    .header-name, .header-pitch {font-size: 3rem;}
+    .header-p {font-size: 1rem; margin-top: 1.5rem;}
+    .bi-linkedin, .bi-github {font-size: 2rem; margin: 1.5rem;}
+    #contact input, #contact textarea {margin-bottom: .8rem;}
+}
+@media screen and (min-width: 769px) {
+    .gap {gap: 2rem;}
+    .main-nav a {font-size: 1rem;}
+    .section-title {font-size: 2.5rem;}
+    .bi-arrow-up-circle {font-size: 2rem; margin-left: 1.5rem;}
+    .small {font-size: 1.2rem;}
+    .header-name, .header-pitch {font-size: 4rem;}
+    .header-p {font-size: 1.2rem; margin-top: 2rem;}
+    .bi-linkedin, .bi-github {font-size: 2.5rem; margin: 2rem;}
+}
+@media screen and (min-width: 992px) {
+    #contact {display: none;}
+    .main-nav a {font-size: 1.2rem;}
+    .section-title {font-size: 3rem;}
+    .bi-arrow-up-circle {font-size: 2.3rem; margin-left: 2rem;}
+    .main-nav a:hover {
+        color: var(--color-contrast);
+    }
+    .bi-arrow-up-circle:hover {
+        color: var(--color-contrast);
+    }
+    .about-flex-p a:hover {
+        color: var(--color-contrast);
+    }
+    #download-icon:hover {
+        background-color: #bbb;
+    }
+    .close:hover {
+        background-color: red;
+        color: var(--color-bright);
     }
 }

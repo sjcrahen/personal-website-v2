@@ -19,7 +19,6 @@ window.onload = new (function () {
   const hamburger = document.querySelector("#hamburger");
 
   if (window.innerWidth > 600) {
-    console.log("test");
     navContainer.classList.remove("transparent");
   }
 
@@ -170,7 +169,7 @@ window.onload = new (function () {
   }
 
   function openResume() {
-    window.open("Shawn_Crahen_Resume_2022.pdf");
+    window.open("Shawn_Crahen_Resume_2023.pdf");
   }
 
   // show contact modal on large screens
