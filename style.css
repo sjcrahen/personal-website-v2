@@ -277,7 +277,8 @@ p {
     box-sizing: border-box;
     border: 2px solid var(--color-bright);
     border-radius: .3rem;
-    max-width: 380px;
+    /* max-width: 380px; */
+    max-width: 420px;
     min-width: 280px;
     min-height: 160px;
     padding: 2rem;
@@ -286,8 +287,6 @@ p {
 .cert-flex-item {
     display:flex;
     align-items: center;
-    min-width: 360px;
-    max-width: 420px;
     padding: 1.5rem;
     min-height: unset;
 }
