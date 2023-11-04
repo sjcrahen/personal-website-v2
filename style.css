@@ -273,6 +273,13 @@ p {
     width: 100%;
     justify-content: space-evenly;
 }
+.cert-flex-item-container a {
+    text-decoration: none;
+}
+.cert-flex-item-container a:hover {
+    transform: scale(1.01);
+    transition: all 0.2s;
+}
 .ed-flex-item, .cert-flex-item {
     box-sizing: border-box;
     border: 2px solid var(--color-bright);
