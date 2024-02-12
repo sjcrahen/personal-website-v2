@@ -2,9 +2,9 @@
     --color-bg: #020c1b;
     --font-sans: "Trebuchet MS", Helvetica, sans-serif; 
     --font-mono: "SF Mono","Fira Code", "Fira Mono", "Roboto Mono", monospace;
-    --color-bright: #e8e8e8;
-    --color-main: #989898;
-    --color-contrast: #89d2ff;
+    --color-bright: #eee;
+    --color-main: #aaa;
+    --color-contrast: #d9970d;
     --color-card: #1a1b29;
 }
 * {margin: 0;}
@@ -427,12 +427,15 @@ p {
 }
 .bi-linkedin:hover, .bi-github:hover {
     transform: scale(1.1);
+    transition: all 0.2s;
 }
 .card:hover {
     transform: scale(1.02);
+    transition: all 0.2s;
 }
 #contact-modal input:hover, #contact-modal textarea:hover {
     transform: scale(1.01);
+    transition: all 0.2s;
 }
 #contact .btn:hover {
     cursor: pointer;
