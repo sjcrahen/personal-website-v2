@@ -163,7 +163,7 @@ window.onload = new (function () {
     }
 
     function openResume() {
-        window.open('Resume_Shawn_Crahen_2025.pdf');
+        window.open('Resume_Shawn_Crahen_2026.pdf');
     }
 
     // show contact modal on large screens
