@@ -35,7 +35,7 @@ window.onload = new (function () {
 
     //handle response nav bar on window size
     function initResponsiveNav() {
-        if (window.innerWidth < 601) {
+        if (window.innerWidth < 768) {
             collapseMenu();
         } else {
             navContainer.classList.remove('transparent');
@@ -54,7 +54,7 @@ window.onload = new (function () {
     }
 
     function collapseMenu() {
-        if (window.innerWidth < 601) {
+        if (window.innerWidth < 767) {
             nav.classList.remove('open');
             navLinks.forEach((e) => e.classList.remove('responsive'));
             navContainer.classList.add('transparent');
